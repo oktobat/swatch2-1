@@ -16,11 +16,11 @@ $('#menu li a').on('click focus', function(e){
     } else {
         if ( !$('.skillContainer > div').hasClass('on')) {
             $('.skillContainer > div').addClass('on')
-            count(70, '.html')
-            count(60, '.css')
-            count(80, '.script')
-            count(60, '.jquery')
-            count(50, '.react')
+            count(70, '.html', 10)
+            count(60, '.css', 20)
+            count(80, '.script', 30)
+            count(60, '.jquery', 40)
+            count(50, '.react', 50)
         }
     }
 
@@ -57,7 +57,7 @@ $('#menu li a').on('click focus', function(e){
 })
 
 
-function count(jumsu, cname) {
+function count(jumsu, cname, time) {
     let num = 0; 
     var stop = setInterval(function(){
         num++;
@@ -66,7 +66,7 @@ function count(jumsu, cname) {
         } else {
             clearInterval(stop)
         }
-    }, 30)
+    }, time)
 }
 
 
@@ -92,11 +92,11 @@ $(window).on('scroll', function(){
         $('#menu li').eq(1).siblings().removeClass('on')
         if ( !$('.skillContainer > div').hasClass('on') ) {
             $('.skillContainer > div').addClass('on')
-            count(70, '.html')
-            count(60, '.css')
-            count(80, '.script')
-            count(60, '.jquery')
-            count(50, '.react')
+            count(70, '.html', 10)
+            count(60, '.css', 20)
+            count(80, '.script', 30)
+            count(60, '.jquery', 40)
+            count(50, '.react', 50)
         }
         $('#sect3').removeClass('on')
         $('#sect3 ul li').css({
@@ -139,7 +139,7 @@ $('.slideInner').slick({
     autoplay:true,
     arrows:false,
     pauseOnHover:false,
-    autoplaySpeed:6000,
+    autoplaySpeed:3000,
     dots:true
 })
 
