@@ -125,21 +125,17 @@ section {
     left:0; font-size:20px; width:100%; 
     text-align:center; 
 }
-.skillContainer > div > .score {
-    position:absolute; bottom:0; 
-    width:100%; transition:all 0.5s; }
-.skillContainer > div.html > .score { height:0%; 
-    background-image:linear-gradient(to top, #f00, #ff0, #00f); 
-    transition-delay: 0s;}
-.skillContainer > div.css > .score { height:0%; background:green; transition-delay: 0s;}
-.skillContainer > div.script > .score { height:0%; background:orange; transition-delay: 0s;}
-.skillContainer > div.jquery > .score { height:0%; background:pink; transition-delay: 0s;}
-.skillContainer > div.react > .score { height:0%; background:brown; transition-delay: 0s;}
-.skillContainer> div.html.on > .score { height:70%; transition-delay: 0s; }
+.skillContainer > div > .score { position:absolute; bottom:0; width:100%; height:0%; }
+.skillContainer > div.html > .score { background-image:linear-gradient(to top, #f00, #ff0, #00f); }
+.skillContainer > div.css > .score {  background:green; }
+.skillContainer > div.script > .score { background:orange; }
+.skillContainer > div.jquery > .score { background:pink; }
+.skillContainer > div.react > .score {  background:brown; }
+/* .skillContainer> div.html.on > .score { height:70%; transition-delay: 0s; }
 .skillContainer> div.css.on > .score { height:60%;  transition-delay: 0.5s;}
 .skillContainer> div.script.on > .score { height:80%; transition-delay: 1s;}
 .skillContainer> div.jquery.on > .score { height:60%; transition-delay: 1.5s; }
-.skillContainer> div.react.on > .score { height:50%;  transition-delay: 2s;}
+.skillContainer> div.react.on > .score { height:50%;  transition-delay: 2s;} */
 
 .skillContainer .myscore {
     position:absolute; top:10px; 

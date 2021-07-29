@@ -11,16 +11,17 @@ $('#menu li a').on('click focus', function(e){
     $(this).parent().addClass('on')
     $(this).parent().siblings().removeClass('on')
     var num = $(this).parent().index()
-    if (num===0) {
-        $('.skillContainer > div').removeClass('on')
+    if (num<1) {
+        $('.skillContainer > div').find('.score').css({ height:'0%' })
+        $('.skillContainer').removeClass('on')
     } else {
-        if ( !$('.skillContainer > div').hasClass('on')) {
-            $('.skillContainer > div').addClass('on')
-            count(70, '.html', 10)
-            count(60, '.css', 20)
-            count(80, '.script', 30)
-            count(60, '.jquery', 40)
-            count(50, '.react', 50)
+        if ( !$('.skillContainer').hasClass('on') ) {
+            $('.skillContainer').addClass('on')
+            count(70, '.html', 15)
+            count(60, '.css', 16)
+            count(80, '.script', 17)
+            count(60, '.jquery', 18)
+            count(50, '.react', 19)
         }
     }
 
@@ -62,9 +63,11 @@ function count(jumsu, cname, time) {
     var stop = setInterval(function(){
         num++;
         if (num<=jumsu) {
+            $(cname).find('.score').css({ height:num+'%', transition:'all 0s' })
             $(cname).find('.myscore').text(num+'%')
         } else {
             clearInterval(stop)
+            $(cname).find('.score').css({ transition:'all 1s' })
         }
     }, time)
 }
@@ -86,22 +89,21 @@ $(window).on('scroll', function(){
     if ( sct>=sDist0 && sct<sDist1 && !cflag) {
         $('#menu li').eq(0).addClass('on')
         $('#menu li').eq(0).siblings().removeClass('on')
-        $('.skillContainer > div').removeClass('on')
+        $('.skillContainer > div').find('.score').css({ height:'0%' })
+        $('.skillContainer').removeClass('on')
     } else if ( sct>=sDist1 && sct<sDist2 && !cflag) {
         $('#menu li').eq(1).addClass('on')
         $('#menu li').eq(1).siblings().removeClass('on')
-        if ( !$('.skillContainer > div').hasClass('on') ) {
-            $('.skillContainer > div').addClass('on')
-            count(70, '.html', 10)
-            count(60, '.css', 20)
-            count(80, '.script', 30)
-            count(60, '.jquery', 40)
-            count(50, '.react', 50)
+        if ( !$('.skillContainer').hasClass('on') ) {
+            $('.skillContainer').addClass('on')
+            count(70, '.html', 15)
+            count(60, '.css', 16)
+            count(80, '.script', 17)
+            count(60, '.jquery', 18)
+            count(50, '.react', 19)
         }
         $('#sect3').removeClass('on')
-        $('#sect3 ul li').css({
-            transitionDelay:'0s'
-        })
+        $('#sect3 ul li').css({ transitionDelay:'0s' })
     } else if ( sct>=sDist2 && sct<lastSect && !cflag) {
         $('#menu li').eq(2).addClass('on')
         $('#menu li').eq(2).siblings().removeClass('on')
